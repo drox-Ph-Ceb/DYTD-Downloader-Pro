@@ -4,418 +4,425 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DYTD Downloader Pro - Features & Uses Manual</title>
+    <meta name="description" content="Official features and usage guide for DYTD Downloader Pro. All-in-one multimedia downloader, converter, analyzer, and media utility.">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #0f172a;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #334155;
+            --text-light: #64748b;
+            --border: #e2e8f0;
+            --radius: 10px;
+            --shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+            --disclaimer-bg: #fef2f2;
+            --disclaimer-border: #fecaca;
+            --disclaimer-text: #991b1b;
         }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
             line-height: 1.6;
-            color: #333;
-            background: #f5f5f5;
+            -webkit-font-smoothing: antialiased;
         }
-        
+
         .container {
-            max-width: 900px;
+            max-width: 1100px;
             margin: 0 auto;
-            background: white;
-            padding: 60px 80px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            padding: 40px 20px;
         }
-        
-        .header {
+
+        header {
             text-align: center;
-            border-bottom: 4px solid #2563eb;
-            padding-bottom: 30px;
+            padding: 60px 20px 40px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            border-radius: 0 0 var(--radius) var(--radius);
             margin-bottom: 40px;
         }
-        
-        .logo {
-            font-size: 48px;
-            font-weight: bold;
-            color: #2563eb;
+
+        header h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
             margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
-        
-        .subtitle {
-            font-size: 24px;
-            color: #64748b;
-            margin-bottom: 15px;
-        }
-        
-        .generated-date {
-            font-size: 14px;
+
+        header .subtitle {
+            font-size: 1.2rem;
             color: #94a3b8;
-            font-style: italic;
+            margin-bottom: 20px;
         }
-        
-        h1 {
-            color: #1e293b;
-            font-size: 32px;
-            margin: 40px 0 20px 0;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #e2e8f0;
+
+        header .meta {
+            display: inline-flex;
+            gap: 15px;
+            background: rgba(255,255,255,0.1);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #cbd5e1;
         }
-        
-        h2 {
-            color: #2563eb;
-            font-size: 24px;
-            margin: 30px 0 15px 0;
-        }
-        
+
         .intro {
-            background: #f8fafc;
-            padding: 25px;
-            border-left: 5px solid #2563eb;
-            margin: 30px 0;
-            border-radius: 0 8px 8px 0;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+            border-left: 5px solid var(--primary);
         }
-        
+
         .intro p {
-            font-size: 16px;
-            line-height: 1.8;
-            color: #475569;
+            font-size: 1.1rem;
+            color: var(--text-light);
         }
-        
-        .feature-section {
-            margin: 30px 0;
+
+        h2 {
+            font-size: 1.8rem;
+            color: var(--secondary);
+            margin: 40px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border);
         }
-        
+
         .feature-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
-            margin: 20px 0;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
         }
-        
-        .feature-item {
-            background: #ffffff;
-            padding: 15px 20px;
-            border: 1px solid #e2e8f0;
-            border-radius: 6px;
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 24px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid var(--border);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+        }
+
+        .feature-card h3 {
+            font-size: 1.2rem;
+            color: var(--primary-dark);
+            margin-bottom: 8px;
             display: flex;
-            align-items: flex-start;
-            transition: all 0.3s ease;
+            align-items: center;
+            gap: 8px;
         }
-        
-        .feature-item:hover {
-            background: #f1f5f9;
-            border-color: #2563eb;
-            transform: translateX(5px);
+
+        .feature-card p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.5;
         }
-        
-        .feature-bullet {
-            color: #2563eb;
-            font-weight: bold;
-            margin-right: 12px;
-            font-size: 18px;
-            min-width: 20px;
-        }
-        
-        .feature-text {
-            color: #334155;
-            font-size: 15px;
-        }
-        
+
         .section-box {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: var(--card-bg);
             padding: 30px;
-            border-radius: 10px;
-            margin: 30px 0;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin: 40px 0;
+            border-top: 4px solid var(--primary);
         }
-        
+
         .section-box h2 {
-            color: white;
             margin-top: 0;
-            border-bottom: 2px solid rgba(255,255,255,0.3);
-            padding-bottom: 10px;
+            border: none;
         }
-        
-        .section-box .feature-item {
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.2);
-            margin-bottom: 10px;
-        }
-        
-        .section-box .feature-item:hover {
-            background: rgba(255,255,255,0.2);
-        }
-        
-        .section-box .feature-bullet {
-            color: #fbbf24;
-        }
-        
-        .section-box .feature-text {
-            color: white;
-        }
-        
-        .summary {
-            background: #fef3c7;
-            border: 2px solid #f59e0b;
-            padding: 25px;
-            border-radius: 8px;
+
+        .disclaimer {
+            background: var(--disclaimer-bg);
+            border: 1px solid var(--disclaimer-border);
+            border-left: 5px solid #ef4444;
+            padding: 30px;
+            border-radius: var(--radius);
             margin: 40px 0;
         }
-        
-        .summary h2 {
-            color: #92400e;
+
+        .disclaimer h2 {
+            color: var(--disclaimer-text);
+            border-bottom: 2px solid var(--disclaimer-border);
             margin-top: 0;
         }
-        
-        .summary p {
-            color: #78350f;
-            font-size: 15px;
-            line-height: 1.7;
+
+        .disclaimer h3 {
+            color: #b91c1c;
+            font-size: 1.1rem;
+            margin: 18px 0 8px;
         }
-        
-        .footer {
-            text-align: center;
-            margin-top: 50px;
-            padding-top: 30px;
-            border-top: 2px solid #e2e8f0;
-            color: #94a3b8;
-            font-size: 14px;
+
+        .disclaimer p {
+            color: #7f1d1d;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 10px;
         }
-        
-        .badge {
-            display: inline-block;
-            background: #2563eb;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 12px;
+
+        .actions {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 40px 0;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 8px;
             font-weight: 600;
-            margin-left: 10px;
-            vertical-align: middle;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            transition: all 0.2s;
+            display: inline-block;
         }
-        
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border);
+            margin-top: 20px;
+        }
+
         @media print {
-            body {
-                background: white;
-            }
-            .container {
-                box-shadow: none;
-                padding: 40px;
-                max-width: 100%;
-            }
-            .feature-item:hover {
-                transform: none;
-            }
+            body { background: white; }
+            header { background: white; color: black; padding: 20px; }
+            header h1 { color: #111; }
+            header .meta { background: #f1f5f9; color: #475569; }
+            .feature-card, .intro, .section-box, .disclaimer { box-shadow: none; border: 1px solid #ddd; }
+            .disclaimer { background: #fef2f2; border: 1px solid #fecaca; }
+            .actions { display: none; }
+            .container { padding: 0; max-width: 100%; }
         }
-        
+
         @media (max-width: 768px) {
-            .container {
-                padding: 30px 40px;
-            }
-            .logo {
-                font-size: 36px;
-            }
-            .subtitle {
-                font-size: 20px;
-            }
+            header h1 { font-size: 2rem; }
+            .feature-grid { grid-template-columns: 1fr; }
+            .actions { flex-direction: column; align-items: center; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <div class="logo">🎵 DYTD</div>
-            <div class="subtitle">Downloader Pro</div>
-            <div class="generated-date">Generated: May 21, 2026</div>
-        </div>
 
-        <div class="intro">
-            <p><strong>DYTD Downloader Pro</strong> is an all-in-one multimedia downloader, converter, analyzer, and media utility application designed for audio and video workflows. Whether you're downloading content, converting files, or analyzing music, DYTD provides powerful tools in one easy-to-use package.</p>
-        </div>
+<header>
+    <h1>DYTD Downloader Pro</h1>
+    <div class="subtitle">Features & Uses Manual</div>
+    <div class="meta">
+        <span> Generated: 2026-05-21</span>
+        <span> Version: Pro Edition</span>
+    </div>
+</header>
 
-        <h1>📥 Download & Conversion Features</h1>
-        <div class="feature-section">
-            <div class="feature-grid">
-                <div class="feature-item">
-                    <span class="feature-bullet">▸</span>
-                    <span class="feature-text"><strong>Video Downloader</strong> - Save videos from your favorite platforms</span>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-bullet">▸</span>
-                    <span class="feature-text"><strong>Audio Downloader</strong> - Extract and download audio files</span>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-bullet">▸</span>
-                    <span class="feature-text"><strong>Playlist Downloader</strong> - Download entire playlists at once</span>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-bullet">▸</span>
-                    <span class="feature-text"><strong>Batch Downloading Support</strong> - Download multiple files simultaneously</span>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-bullet">▸</span>
-                    <span class="feature-text"><strong>Search and Download Feature</strong> - Find and download content directly</span>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-bullet">▸</span>
-                    <span class="feature-text"><strong>URL-Based Downloading</strong> - Simple paste-and-go functionality</span>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-bullet">▸</span>
-                    <span class="feature-text"><strong>Video to MP3 Converter</strong> - Convert videos to audio format</span>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-bullet">▸</span>
-                    <span class="feature-text"><strong>Audio Extraction from Video</strong> - Pull audio tracks from any video</span>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-bullet">▸</span>
-                    <span class="feature-text"><strong>MP3 Export Support</strong> - Save in universal audio format</span>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-bullet">▸</span>
-                    <span class="feature-text"><strong>MP4 Export Support</strong> - Save in universal video format</span>
-                </div>
-            </div>
-        </div>
+<div class="container">
+    <section class="intro">
+        <p><strong>DYTD Downloader Pro</strong> is an all-in-one multimedia downloader, converter, analyzer, and media utility application designed for audio and video workflows. Whether you're archiving content, converting formats, or analyzing music, DYTD streamlines the entire process into a single, intuitive interface.</p>
+    </section>
 
-        <h1>🎸 Music Analysis & Learning</h1>
-        <div class="feature-section">
-            <div class="feature-grid">
-                <div class="feature-item">
-                    <span class="feature-bullet">♫</span>
-                    <span class="feature-text"><strong>Guitar Chord Analyzer</strong> - Identify chords in any song</span>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-bullet">♫</span>
-                    <span class="feature-text"><strong>Chord Progression Detection</strong> - Understand song structure</span>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-bullet">♫</span>
-                    <span class="feature-text"><strong>Song Key Detection</strong> - Find the key of any track</span>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-bullet">♫</span>
-                    <span class="feature-text"><strong>Capo Chord Conversion</strong> - Adjust chords for capo positions</span>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-bullet">♫</span>
-                    <span class="feature-text"><strong>Smart Chord Family Detection</strong> - Discover related chords</span>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-bullet">♫</span>
-                    <span class="feature-text"><strong>Music Learning Support</strong> - Tools designed for musicians</span>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-bullet">♫</span>
-                    <span class="feature-text"><strong>Live Playback Synchronization</strong> - Sync audio with chord display</span>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-bullet">♫</span>
-                    <span class="feature-text"><strong>Music Progression History Display</strong> - Track your learning journey</span>
-                </div>
-            </div>
-        </div>
+    <div class="actions">
+        <button class="btn btn-primary" onclick="window.print()">🖨️ Save as PDF / Print</button>
+    </div>
 
-        <div class="section-box">
-            <h2>⚡ Performance & Analysis Tools</h2>
-            <div class="feature-grid">
-                <div class="feature-item">
-                    <span class="feature-bullet">⚡</span>
-                    <span class="feature-text"><strong>Automatic Media Analysis</strong> - Intelligent content scanning</span>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-bullet">⚡</span>
-                    <span class="feature-text"><strong>Fast Analysis Mode</strong> - Quick results when you need them</span>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-bullet">⚡</span>
-                    <span class="feature-text"><strong>Deep Analysis Mode</strong> - Detailed insights and metadata</span>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-bullet">⚡</span>
-                    <span class="feature-text"><strong>Cached Analysis</strong> - Faster reloads with stored data</span>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-bullet">⚡</span>
-                    <span class="feature-text"><strong>Multi-Threaded Processing</strong> - Handle multiple tasks efficiently</span>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-bullet">⚡</span>
-                    <span class="feature-text"><strong>Real-Time Media Processing</strong> - Instant results and feedback</span>
-                </div>
-            </div>
+    <h2>📥 Download & Acquisition</h2>
+    <div class="feature-grid">
+        <div class="feature-card">
+            <h3> Video Downloader</h3>
+            <p>Save videos from supported platforms directly to your device with quality selection and metadata preservation.</p>
         </div>
-
-        <h1>🎨 Media Enhancement & Organization</h1>
-        <div class="feature-section">
-            <div class="feature-grid">
-                <div class="feature-item">
-                    <span class="feature-bullet">◈</span>
-                    <span class="feature-text"><strong>Media Enhancer Tools</strong> - Improve quality and clarity</span>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-bullet">◈</span>
-                    <span class="feature-text"><strong>Audio Visualizer</strong> - See your audio in real-time</span>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-bullet">◈</span>
-                    <span class="feature-text"><strong>Audio Waveform Visualization</strong> - Detailed audio representation</span>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-bullet">◈</span>
-                    <span class="feature-text"><strong>Subtitle Support & Detection</strong> - Auto-find and display subtitles</span>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-bullet">◈</span>
-                    <span class="feature-text"><strong>Media Playback Tools</strong> - Built-in player for previews</span>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-bullet">◈</span>
-                    <span class="feature-text"><strong>Media Organization Support</strong> - Keep your library sorted</span>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-bullet">◈</span>
-                    <span class="feature-text"><strong>Download History Handling</strong> - Track and manage past downloads</span>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-bullet">◈</span>
-                    <span class="feature-text"><strong>Media Conversion Utilities</strong> - Convert between formats easily</span>
-                </div>
-            </div>
+        <div class="feature-card">
+            <h3>🎵 Audio Downloader</h3>
+            <p>Extract and download audio tracks efficiently, optimized for music, podcasts, and voice recordings.</p>
         </div>
-
-        <h1>🎭 User Interface & Experience</h1>
-        <div class="feature-section">
-            <div class="feature-grid">
-                <div class="feature-item">
-                    <span class="feature-bullet">◎</span>
-                    <span class="feature-text"><strong>Custom Interface</strong> - Personalized user experience</span>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-bullet">◎</span>
-                    <span class="feature-text"><strong>Dark/Light Themes</strong> - Switch between visual modes</span>
-                </div>
-            </div>
+        <div class="feature-card">
+            <h3>📋 Playlist Downloader</h3>
+            <p>Download entire playlists in one click. Automatically sequences and tags multi-track collections.</p>
         </div>
-
-        <div class="summary">
-            <h2>📋 Summary</h2>
-            <p>This document summarizes the primary uses and capabilities of DYTD Downloader Pro. From downloading and converting media to advanced music analysis and chord detection, DYTD provides a comprehensive suite of tools for content creators, musicians, and media enthusiasts. Whether you need to grab a quick video, analyze a song's chord progression, or manage a large media library, DYTD Downloader Pro delivers professional-grade features in an intuitive package.</p>
+        <div class="feature-card">
+            <h3>⚡ Batch Downloading Support</h3>
+            <p>Queue multiple links simultaneously. Import from text files or URLs for unattended bulk downloads.</p>
         </div>
-
-        <div class="footer">
-            <p><strong>DYTD Downloader Pro</strong> - All-in-One Multimedia Solution</p>
-            <p>© 2026 DYTD. All rights reserved.</p>
-            <p style="margin-top: 10px; font-size: 12px;">Document generated on May 21, 2026</p>
+        <div class="feature-card">
+            <h3>🔍 Search and Download Feature</h3>
+            <p>Built-in search engine lets you find and grab content without leaving the application.</p>
+        </div>
+        <div class="feature-card">
+            <h3>🔗 URL-Based Downloading</h3>
+            <p>Paste any supported link and let DYTD handle protocol detection, parsing, and fetching automatically.</p>
         </div>
     </div>
 
-    <script>
-        // Print to PDF helper
-        window.addEventListener('load', function() {
-            console.log('DYTD Manual loaded. Press Ctrl+P (or Cmd+P) to save as PDF.');
-        });
-    </script>
+    <h2>🔄 Conversion & Export</h2>
+    <div class="feature-grid">
+        <div class="feature-card">
+            <h3>🎧 Video to MP3 Converter</h3>
+            <p>Instantly convert video files to high-quality MP3 audio with preserved bitrate and metadata.</p>
+        </div>
+        <div class="feature-card">
+            <h3>📤 Audio Extraction from Video</h3>
+            <p>Pull clean audio tracks from video containers (MP4, MKV, WebM) without re-encoding loss.</p>
+        </div>
+        <div class="feature-card">
+            <h3>💾 MP3 Export Support</h3>
+            <p>Universal audio format output compatible with all players, devices, and DJ software.</p>
+        </div>
+        <div class="feature-card">
+            <h3>🎞️ MP4 Export Support</h3>
+            <p>Standard video export for social media, presentations, and archival storage.</p>
+        </div>
+        <div class="feature-card">
+            <h3>️ Media Conversion Utilities</h3>
+            <p>Format switching, codec optimization, and batch conversion tools for professional workflows.</p>
+        </div>
+    </div>
+
+    <h2> Music Analysis & Learning</h2>
+    <div class="feature-grid">
+        <div class="feature-card">
+            <h3> Guitar Chord Analyzer</h3>
+            <p>Real-time chord recognition from audio files. Displays fingering diagrams and chord names.</p>
+        </div>
+        <div class="feature-card">
+            <h3>📈 Chord Progression Detection</h3>
+            <p>Automatically maps song structure and identifies repeating harmonic patterns.</p>
+        </div>
+        <div class="feature-card">
+            <h3>🎼 Song Key Detection</h3>
+            <p>Instantly identifies the tonal center of any track for transposition or vocal matching.</p>
+        </div>
+        <div class="feature-card">
+            <h3>🔀 Capo Chord Conversion</h3>
+            <p>Auto-adjusts chord shapes based on capo position. Play in easy shapes while hearing the original key.</p>
+        </div>
+        <div class="feature-card">
+            <h3> Smart Chord Family Detection</h3>
+            <p>Suggests harmonically related chords for songwriting, improvisation, and arrangement.</p>
+        </div>
+        <div class="feature-card">
+            <h3>📚 Music Learning Support</h3>
+            <p>Educational overlays, practice loops, and difficulty tagging designed for students and teachers.</p>
+        </div>
+        <div class="feature-card">
+            <h3> Live Playback Synchronization</h3>
+            <p>Syncs audio/video playback with chord overlays in real-time for accurate practice timing.</p>
+        </div>
+        <div class="feature-card">
+            <h3>📜 Music Progression History Display</h3>
+            <p>Tracks analyzed songs, saved patterns, and learning milestones across sessions.</p>
+        </div>
+    </div>
+
+    <div class="section-box">
+        <h2>⚡ Performance & Processing</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3> Automatic Media Analysis</h3>
+                <p>Background scanning detects format, duration, bitrate, and embedded metadata on import.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🚀 Fast Analysis Mode</h3>
+                <p>Quick metadata and basic insights in under 5 seconds. Ideal for library scanning.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🔬 Deep Analysis Mode</h3>
+                <p>Full chord mapping, key detection, tempo analysis, and structural breakdown for detailed study.</p>
+            </div>
+            <div class="feature-card">
+                <h3>💾 Cached Analysis for Faster Reloads</h3>
+                <p>Stores processed results locally for instant project reloads without re-scanning.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🧵 Multi-Threaded Processing</h3>
+                <p>Parallel task execution handles downloads, conversions, and analysis without UI lag.</p>
+            </div>
+            <div class="feature-card">
+                <h3>⏱️ Real-Time Media Processing</h3>
+                <p>On-the-fly analysis and conversion with live feedback and progress tracking.</p>
+            </div>
+        </div>
+    </div>
+
+    <h2>🎨 Interface & Organization</h2>
+    <div class="feature-grid">
+        <div class="feature-card">
+            <h3>🌙 Custom Interface with Dark/Light Themes</h3>
+            <p>Adaptive layout with dark/light themes, customizable panels, and responsive design.</p>
+        </div>
+        <div class="feature-card">
+            <h3>📂 Download History Handling</h3>
+            <p>Centralized log of past downloads with search, filter, and quick-retry functionality.</p>
+        </div>
+        <div class="feature-card">
+            <h3>🗂️ Media Organization Support</h3>
+            <p>Smart folder routing, auto-tagging by source/artist, and library management tools.</p>
+        </div>
+        <div class="feature-card">
+            <h3>📝 Subtitle Support and Subtitle Detection</h3>
+            <p>Auto-fetches available subtitles, supports multi-language tracks, and allows embed/export.</p>
+        </div>
+        <div class="feature-card">
+            <h3>▶️ Media Playback Tools</h3>
+            <p>Built-in player with speed control, loop regions, frame stepping, and sync overlays.</p>
+        </div>
+        <div class="feature-card">
+            <h3>✨ Media Enhancer Tools</h3>
+            <p>Audio normalization, noise reduction, and quality upscaling for cleaner output files.</p>
+        </div>
+    </div>
+
+    <!-- LEGAL & DISCLAIMER SECTION -->
+    <section class="disclaimer">
+        <h2>⚖️ Legal Disclaimer & Terms of Use</h2>
+        
+        <h3>📄 Document Purpose</h3>
+        <p>This document summarizes the primary uses and capabilities detected from the DYTD Downloader Pro application source code. DYTD combines professional-grade downloading, conversion, music analysis, and media organization into a single, efficient workflow. Designed for creators, educators, musicians, and power users, it delivers fast performance, intelligent caching, and a customizable interface without compromising on depth or accuracy.</p>
+        
+        <h3>⚠️ Important Notices</h3>
+        <p><strong>No Warranty:</strong> DYTD Downloader Pro is provided "as is" and "as available" without warranty of any kind. The developers do not guarantee that all features will function in all environments or that analysis results will be 100% accurate.</p>
+        <p><strong>User Responsibility:</strong> By using this application, you agree that you are solely responsible for complying with all applicable laws, platform Terms of Service, and copyright regulations in your jurisdiction. You will only download content you have explicit permission to access, archive, or convert.</p>
+        <p><strong>Platform Compliance:</strong> DYTD does not host, store, or distribute any third-party media. Users are responsible for respecting robots.txt, rate limits, and access controls of source websites, and for not bypassing paywalls or geo-restrictions.</p>
+        
+        <h3> Limitation of Liability</h3>
+        <p>To the fullest extent permitted by law, the developers, contributors, and distributors of DYTD Downloader Pro shall not be liable for any direct, indirect, incidental, or consequential damages arising from use or inability to use the application, loss of data, or copyright claims from third-party platforms.</p>
+    </section>
+
+    <footer>
+        <p><strong>DYTD Downloader Pro</strong> &copy; 2026. All rights reserved.</p>
+        <p>Created by drox-Ph-Ceb.</p>
+    </footer>
+</div>
+
 </body>
 </html>
