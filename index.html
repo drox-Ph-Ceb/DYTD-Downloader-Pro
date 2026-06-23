@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DYTD Downloader Pro - Features & Uses Manual</title>
-    <meta name="description" content="Official features and usage guide for DYTD Downloader Pro. All-in-one multimedia downloader, converter, analyzer, and media utility. Download the latest version from MediaFire.">
+    <meta name="description" content="Official features and usage guide for DYTD Downloader Pro. All-in-one multimedia downloader, converter, chord analyzer, and media utility. Download the latest version from MediaFire.">
     <style>
         :root {
             --primary: #2563eb;
             --primary-dark: #1d4ed8;
+            --gold: #d9b84b;
             --secondary: #0f172a;
             --bg: #f8fafc;
             --card-bg: #ffffff;
@@ -23,7 +24,7 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background: var(--bg);
@@ -63,6 +64,8 @@
         header .meta {
             display: inline-flex;
             gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
             background: rgba(255,255,255,0.1);
             padding: 8px 16px;
             border-radius: 20px;
@@ -90,6 +93,13 @@
             margin: 40px 0 20px;
             padding-bottom: 10px;
             border-bottom: 2px solid var(--border);
+        }
+
+        h3.section-label {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: 600;
+            margin: -10px 0 20px;
         }
 
         .feature-grid {
@@ -137,9 +147,60 @@
             border-top: 4px solid var(--primary);
         }
 
+        .section-box.gold {
+            border-top-color: var(--gold);
+        }
+
         .section-box h2 {
             margin-top: 0;
             border: none;
+        }
+
+        .steps {
+            list-style: none;
+            counter-reset: step;
+            margin: 20px 0 0;
+        }
+
+        .steps li {
+            counter-increment: step;
+            position: relative;
+            padding: 14px 14px 14px 52px;
+            margin-bottom: 10px;
+            background: #f8fafc;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text);
+            font-size: 0.95rem;
+        }
+
+        .steps li::before {
+            content: counter(step);
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            font-weight: 700;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tip-box {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-left: 4px solid var(--primary);
+            padding: 16px 18px;
+            border-radius: 8px;
+            margin-top: 18px;
+            font-size: 0.92rem;
+            color: #1e3a8a;
         }
 
         .disclaimer {
@@ -266,23 +327,23 @@
     <h1>DYTD Downloader Pro</h1>
     <div class="subtitle">Features & Uses Manual</div>
     <div class="meta">
-        <span>📅 Generated: 2026-05-21</span>
-        <span>🔖 Version: Pro Edition</span>
+        <span>📅 Updated: 2026-06-23</span>
+        <span>🔖 Version: Pro Edition v10</span>
+        <span>🎸 Chord Analyzer v4</span>
     </div>
 </header>
 
 <div class="container">
     <section class="intro">
-        <p><strong>DYTD Downloader Pro</strong> is an all-in-one multimedia downloader, converter, analyzer, and media utility application designed for audio and video workflows. Whether you're archiving content, converting formats, or analyzing music, DYTD streamlines the entire process into a single, intuitive interface.</p>
+        <p><strong>DYTD Downloader Pro</strong> is an all-in-one multimedia downloader, converter, chord analyzer, and media utility for audio and video workflows. Search or paste links, download to your library, play tracks, and analyze chords in real time — all from one interface with a compact sidebar, built-in Quick Guide, and professional chord viewer.</p>
     </section>
 
-    <!-- Download Actions -->
     <div class="actions">
-        <a href="https://www.mediafire.com/file/xc2pkcxf3nuo18n/DYTD+Downloader+Pro+v8+Setup+Installer.exe/file"
-           class="btn btn-primary" 
-           target="_blank" 
+        <a href="https://www.mediafire.com/file/ze5u3b0xtvr7ari/DYTD_Downloader_Pro_v10_Setup_Installer.exe/file"
+           class="btn btn-primary"
+           target="_blank"
            rel="noopener noreferrer">
-           ⬇️ Download Latest Version (v2026.05)
+           ⬇️ Download Latest Version (v10)
         </a>
         <button class="btn btn-outline" onclick="window.print()">🖨️ Save as PDF / Print</button>
     </div>
@@ -290,41 +351,40 @@
 
     <h2>📥 Download & Acquisition</h2>
     <div class="feature-grid">
-        <!-- Prominent Download Card -->
         <div class="feature-card" style="border-color: var(--primary); background: linear-gradient(135deg, #eff6ff, #ffffff);">
             <h3>🚀 Get DYTD Downloader Pro</h3>
-            <p>Download the latest Windows installer directly from our verified MediaFire link. Always verify the file hash after download to ensure integrity.</p>
-            <a href="https://www.mediafire.com/file/xc2pkcxf3nuo18n/DYTD+Downloader+Pro+v8+Setup+Installer.exe/file"
-               class="btn btn-primary" 
+            <p>Download the latest Windows installer from our verified MediaFire link. Verify the file hash after download to ensure integrity.</p>
+            <a href="https://www.mediafire.com/file/ze5u3b0xtvr7ari/DYTD_Downloader_Pro_v10_Setup_Installer.exe/file"
+               class="btn btn-primary"
                style="margin-top: 12px; width: 100%;"
-               target="_blank" 
+               target="_blank"
                rel="noopener noreferrer">
                Download Installer (.exe)
             </a>
             <small style="display: block; margin-top: 8px; color: var(--text-light); font-size: 0.8rem;">
-                File: DYTD_Downloader_Pro_Setup_Installer.exe
+                File: DYTD_Downloader_Pro_v10_Setup_Installer.exe
             </small>
         </div>
-        
+
         <div class="feature-card">
             <h3>🎬 Video Downloader</h3>
-            <p>Save videos from supported platforms directly to your device with quality selection and metadata preservation.</p>
+            <p>Save videos from supported platforms with quality selection, format options, and metadata preservation.</p>
         </div>
         <div class="feature-card">
             <h3>🎵 Audio Downloader</h3>
-            <p>Extract and download audio tracks efficiently, optimized for music, podcasts, and voice recordings.</p>
+            <p>Extract and download MP3 audio efficiently — optimized for music, podcasts, and voice recordings.</p>
         </div>
         <div class="feature-card">
             <h3>📋 Playlist Downloader</h3>
             <p>Download entire playlists in one click. Automatically sequences and tags multi-track collections.</p>
         </div>
         <div class="feature-card">
-            <h3>⚡ Batch Downloading Support</h3>
-            <p>Queue multiple links simultaneously. Import from text files or URLs for unattended bulk downloads.</p>
+            <h3>⚡ Batch Import</h3>
+            <p>Queue multiple links at once. Import from <code>list.txt</code> files or paste URLs for bulk unattended downloads.</p>
         </div>
         <div class="feature-card">
-            <h3>🔍 Search and Download Feature</h3>
-            <p>Built-in search engine lets you find and grab content without leaving the application.</p>
+            <h3>🔍 Search & Download</h3>
+            <p>Built-in search finds tracks without leaving the app. Paste a URL or search by song / artist name.</p>
         </div>
         <div class="feature-card">
             <h3>🔗 URL-Based Downloading</h3>
@@ -336,18 +396,18 @@
     <div class="feature-grid">
         <div class="feature-card">
             <h3>🎧 Video to MP3 Converter</h3>
-            <p>Instantly convert video files to high-quality MP3 audio with preserved bitrate and metadata.</p>
+            <p>Convert video files to high-quality MP3 audio with preserved bitrate and metadata.</p>
         </div>
         <div class="feature-card">
-            <h3>📤 Audio Extraction from Video</h3>
-            <p>Pull clean audio tracks from video containers (MP4, MKV, WebM) without re-encoding loss.</p>
+            <h3>📤 Audio Extraction</h3>
+            <p>Pull clean audio tracks from video containers (MP4, MKV, WebM) without unnecessary quality loss.</p>
         </div>
         <div class="feature-card">
-            <h3>💾 MP3 Export Support</h3>
-            <p>Universal audio format output compatible with all players, devices, and DJ software.</p>
+            <h3>💾 MP3 Export</h3>
+            <p>Universal audio output compatible with all players, devices, and DJ software.</p>
         </div>
         <div class="feature-card">
-            <h3>🎞️ MP4 Export Support</h3>
+            <h3>🎞️ MP4 Export</h3>
             <p>Standard video export for social media, presentations, and archival storage.</p>
         </div>
         <div class="feature-card">
@@ -356,68 +416,86 @@
         </div>
     </div>
 
-    <h2>🎸 Music Analysis & Learning</h2>
+    <div class="section-box gold">
+        <h2>🎸 Chord Analyzer Pro</h2>
+        <p class="section-label">Real-time guitar chord recognition with live diagrams, progression tracking, and an expandable Pro Chord Viewer.</p>
+
+        <ol class="steps">
+            <li>Search or paste a YouTube link, then download as <strong>Audio (MP3)</strong>.</li>
+            <li>Open <strong>Audio Library</strong> and play your track.</li>
+            <li>Watch the live <strong>chord name</strong>, <strong>key</strong>, and <strong>progression</strong> in the chord panel below the sidebar controls.</li>
+            <li>Toggle <strong>Deep</strong> for more accurate analysis, or <strong>Easy</strong> for simpler diatonic chords.</li>
+            <li>Set <strong>Capo</strong> (0–11) to match your guitar fretboard.</li>
+            <li><strong>Click the chord display</strong> to open the enlarged <strong>Pro Chord Viewer</strong> popup.</li>
+        </ol>
+
+        <div class="tip-box">
+            <strong>💡 Pro Chord Viewer includes:</strong> large fretboard diagram, per-string fret &amp; note breakdown (E → e), chord tones, key scale with Roman numerals, diatonic chord family, live sync during playback, and highlighted scale notes for the current chord.
+        </div>
+    </div>
+
+    <h2>🎼 Music Analysis Features</h2>
     <div class="feature-grid">
         <div class="feature-card">
-            <h3>🎸 Guitar Chord Analyzer</h3>
-            <p>Real-time chord recognition from audio files. Displays fingering diagrams and chord names.</p>
+            <h3>🎸 Live Chord Detection</h3>
+            <p>Displays the current chord in real time while audio plays, with fingering diagram in the sidebar panel.</p>
         </div>
         <div class="feature-card">
-            <h3>📈 Chord Progression Detection</h3>
-            <p>Automatically maps song structure and identifies repeating harmonic patterns.</p>
+            <h3>📈 Chord Progression</h3>
+            <p>Tracks the harmonic journey of the song — past chords, current chord (highlighted), and the next predicted chord.</p>
         </div>
         <div class="feature-card">
             <h3>🎼 Song Key Detection</h3>
-            <p>Instantly identifies the tonal center of any track for transposition or vocal matching.</p>
+            <p>Identifies the tonal center of any track. Key-aware scoring improves chord accuracy (Algorithm v4).</p>
         </div>
         <div class="feature-card">
-            <h3>🔀 Capo Chord Conversion</h3>
-            <p>Auto-adjusts chord shapes based on capo position. Play in easy shapes while hearing the original key.</p>
+            <h3>🔀 Capo Conversion</h3>
+            <p>Auto-adjusts displayed chords and key based on capo position so you can play in comfortable shapes.</p>
         </div>
         <div class="feature-card">
-            <h3>🧠 Smart Chord Family Detection</h3>
-            <p>Suggests harmonically related chords for songwriting, improvisation, and arrangement.</p>
+            <h3>🧠 Easy (Family Chords)</h3>
+            <p>Maps detected chords to the diatonic family of the song key — ideal for beginners and quick practice.</p>
         </div>
         <div class="feature-card">
-            <h3>📚 Music Learning Support</h3>
-            <p>Educational overlays, practice loops, and difficulty tagging designed for students and teachers.</p>
+            <h3>📊 Key Scale Panel</h3>
+            <p>In the Pro Chord Viewer, see the full major/minor scale, Roman numerals, and all diatonic chords for the detected key.</p>
         </div>
         <div class="feature-card">
-            <h3>🔄 Live Playback Synchronization</h3>
-            <p>Syncs audio/video playback with chord overlays in real-time for accurate practice timing.</p>
+            <h3>🎯 Per-String Breakdown</h3>
+            <p>Popup viewer shows each string's fret position and note name — see exactly what to play, string by string.</p>
         </div>
         <div class="feature-card">
-            <h3>📜 Music Progression History Display</h3>
-            <p>Tracks analyzed songs, saved patterns, and learning milestones across sessions.</p>
+            <h3>🔄 Live Playback Sync</h3>
+            <p>Chord display, progression, and popup viewer stay synchronized with playback in real time.</p>
         </div>
     </div>
 
     <div class="section-box">
-        <h2>⚡ Performance & Processing</h2>
+        <h2>⚡ Analysis Modes & Performance</h2>
         <div class="feature-grid">
             <div class="feature-card">
-                <h3>🔍 Automatic Media Analysis</h3>
-                <p>Background scanning detects format, duration, bitrate, and embedded metadata on import.</p>
-            </div>
-            <div class="feature-card">
                 <h3>🚀 Fast Analysis Mode</h3>
-                <p>Quick metadata and basic insights in under 5 seconds. Ideal for library scanning.</p>
+                <p>Quick chord scan optimized for speed. Great for casual listening and fast library previews.</p>
             </div>
             <div class="feature-card">
                 <h3>🔬 Deep Analysis Mode</h3>
-                <p>Full chord mapping, key detection, tempo analysis, and structural breakdown for detailed study.</p>
+                <p>Longer windows, harmonic separation, key-informed scoring, and stronger smoothing for maximum accuracy.</p>
             </div>
             <div class="feature-card">
-                <h3>💾 Cached Analysis for Faster Reloads</h3>
-                <p>Stores processed results locally for instant project reloads without re-scanning.</p>
+                <h3>💾 Cached Analysis</h3>
+                <p>Results are saved locally after the first scan. Replaying a track loads chords instantly (shown as "Cached").</p>
+            </div>
+            <div class="feature-card">
+                <h3>🔒 Full Activation</h3>
+                <p>Chord Analyzer requires full activation. Trial and non-activated users see a lock notice when analysis is attempted.</p>
+            </div>
+            <div class="feature-card">
+                <h3>⏱️ Smart Limits</h3>
+                <p>Tracks longer than 10 minutes skip chord analysis automatically to keep performance responsive.</p>
             </div>
             <div class="feature-card">
                 <h3>🧵 Multi-Threaded Processing</h3>
-                <p>Parallel task execution handles downloads, conversions, and analysis without UI lag.</p>
-            </div>
-            <div class="feature-card">
-                <h3>⏱️ Real-Time Media Processing</h3>
-                <p>On-the-fly analysis and conversion with live feedback and progress tracking.</p>
+                <p>Analysis runs in the background while downloads and playback continue without freezing the UI.</p>
             </div>
         </div>
     </div>
@@ -425,49 +503,56 @@
     <h2>🎨 Interface & Organization</h2>
     <div class="feature-grid">
         <div class="feature-card">
-            <h3>🌙 Custom Interface with Dark/Light Themes</h3>
-            <p>Adaptive layout with dark/light themes, customizable panels, and responsive design.</p>
+            <h3>📖 Quick Guide & Manual</h3>
+            <p>Built-in Quick Guide in the sidebar with step-by-step chord analyzer instructions. Click 📖 to open this online manual.</p>
         </div>
         <div class="feature-card">
-            <h3>📂 Download History Handling</h3>
-            <p>Centralized log of past downloads with search, filter, and quick-retry functionality.</p>
+            <h3>🌙 Dark / Light Themes</h3>
+            <p>Toggle dark or light mode from the sidebar header. Adaptive layout with gold-accent chord panel.</p>
         </div>
         <div class="feature-card">
-            <h3>🗂️ Media Organization Support</h3>
-            <p>Smart folder routing, auto-tagging by source/artist, and library management tools.</p>
+            <h3>📂 Audio & Video Libraries</h3>
+            <p>Separate library tabs for MP3 and MP4 with playback, trim, and file management tools.</p>
         </div>
         <div class="feature-card">
-            <h3>📝 Subtitle Support and Detection</h3>
-            <p>Auto-fetches available subtitles, supports multi-language tracks, and allows embed/export.</p>
+            <h3>🗂️ Media Organization</h3>
+            <p>Smart folder routing, auto-tagging, and library refresh for clean file management.</p>
         </div>
         <div class="feature-card">
-            <h3>▶️ Media Playback Tools</h3>
-            <p>Built-in player with speed control, loop regions, frame stepping, and sync overlays.</p>
+            <h3>📝 Subtitle Support</h3>
+            <p>Auto-fetches available subtitles in video mode. Supports multi-language tracks and embed/export.</p>
         </div>
         <div class="feature-card">
-            <h3>✨ Media Enhancer Tools</h3>
-            <p>Audio normalization, noise reduction, and quality upscaling for cleaner output files.</p>
+            <h3>▶️ Media Playback</h3>
+            <p>Built-in player with library integration. Chord analysis starts automatically when you play audio.</p>
+        </div>
+        <div class="feature-card">
+            <h3>📣 Live Marquee</h3>
+            <p>Colorful clickable announcement bar at the bottom of the app for tips, news, and updates.</p>
+        </div>
+        <div class="feature-card">
+            <h3>🛡️ Binary Updater</h3>
+            <p>One-click update for FFmpeg and related tools to keep downloads and analysis running smoothly.</p>
         </div>
     </div>
 
-    <!-- LEGAL & DISCLAIMER SECTION -->
     <section class="disclaimer">
         <h2>⚖️ Legal Disclaimer & Terms of Use</h2>
-        
+
         <h3>📄 Document Purpose</h3>
-        <p>This document summarizes the primary uses and capabilities detected from the DYTD Downloader Pro application source code. DYTD combines professional-grade downloading, conversion, music analysis, and media organization into a single, efficient workflow. Designed for creators, educators, musicians, and power users, it delivers fast performance, intelligent caching, and a customizable interface without compromising on depth or accuracy.</p>
-        
+        <p>This document summarizes the primary uses and capabilities of DYTD Downloader Pro. DYTD combines professional-grade downloading, conversion, music analysis, and media organization into a single workflow. Designed for creators, educators, musicians, and power users, it delivers fast performance, intelligent caching, and a customizable interface.</p>
+
         <h3>⚠️ Important Notices</h3>
-        <p><strong>No Warranty:</strong> DYTD Downloader Pro is provided "as is" and "as available" without warranty of any kind. The developers do not guarantee that all features will function in all environments or that analysis results will be 100% accurate.</p>
+        <p><strong>No Warranty:</strong> DYTD Downloader Pro is provided "as is" and "as available" without warranty of any kind. The developers do not guarantee that all features will function in all environments or that chord analysis results will be 100% accurate.</p>
         <p><strong>User Responsibility:</strong> By using this application, you agree that you are solely responsible for complying with all applicable laws, platform Terms of Service, and copyright regulations in your jurisdiction. You will only download content you have explicit permission to access, archive, or convert.</p>
         <p><strong>Platform Compliance:</strong> DYTD does not host, store, or distribute any third-party media. Users are responsible for respecting robots.txt, rate limits, and access controls of source websites, and for not bypassing paywalls or geo-restrictions.</p>
         <p><strong>Official Distribution:</strong> DYTD Downloader Pro is exclusively distributed via this page and our verified MediaFire link. We do not authorize third-party download sites.</p>
-        
+
         <h3>🔐 Verify Your Download</h3>
         <div class="hash-box">
-            md5: [f6bdcf7c1de6194e85ebb7d6ec7b9249 - DYTD Downloader Pro.exe]<br>
+            md5: f6bdcf7c1de6194e85ebb7d6ec7b9249 — DYTD Downloader Pro.exe
         </div>
-        
+
         <h3>⚖️ Limitation of Liability</h3>
         <p>To the fullest extent permitted by law, the developers, contributors, and distributors of DYTD Downloader Pro shall not be liable for any direct, indirect, incidental, or consequential damages arising from use or inability to use the application, loss of data, or copyright claims from third-party platforms.</p>
     </section>
@@ -476,11 +561,11 @@
         <p><strong>DYTD Downloader Pro</strong> &copy; 2026. All rights reserved.</p>
         <p>Created by drox-Ph-Ceb.</p>
         <p style="margin-top: 8px; font-size: 0.85rem;">
-            <a href="https://www.mediafire.com/file/ze5u3b0xtvr7ari/DYTD_Downloader_Pro_v10_Setup_Installer.exe/file" 
-               style="color: var(--primary); text-decoration: none;" 
-               target="_blank" 
+            <a href="https://www.mediafire.com/file/ze5u3b0xtvr7ari/DYTD_Downloader_Pro_v10_Setup_Installer.exe/file"
+               style="color: var(--primary); text-decoration: none;"
+               target="_blank"
                rel="noopener noreferrer">
-               📥 Download Latest Version
+               📥 Download Latest Version (v10)
             </a>
         </p>
     </footer>
